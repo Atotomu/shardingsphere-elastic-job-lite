@@ -16,12 +16,11 @@
   ~ limitations under the License.
   -->
 
-<xsd:schema xmlns="http://www.dangdang.com/schema/ddframe/job"
+<xsd:schema xmlns="http://elasticjob.shardingsphere.apache.org/schema/job"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema"
         xmlns:beans="http://www.springframework.org/schema/beans"
-        targetNamespace="http://www.dangdang.com/schema/ddframe/job"
-        elementFormDefault="qualified"
-        attributeFormDefault="unqualified">
+        targetNamespace="http://elasticjob.shardingsphere.apache.org/schema/job"
+        elementFormDefault="qualified">
     <xsd:import namespace="http://www.springframework.org/schema/beans"/>
     
     <xsd:element name="listener">
@@ -41,10 +40,9 @@
         <xsd:complexContent>
             <xsd:extension base="beans:identifiedType">
                 <xsd:all>
-                    <xsd:element ref="listener" minOccurs="0" maxOccurs="1" />
-                    <xsd:element ref="distributed-listener" minOccurs="0" maxOccurs="1" />
+                    <xsd:element ref="listener" minOccurs="0" />
+                    <xsd:element ref="distributed-listener" minOccurs="0" />
                 </xsd:all>
-                <xsd:attribute name="class" type="xsd:string" />
                 <xsd:attribute name="job-ref" type="xsd:string" />
                 <xsd:attribute name="registry-center-ref" type="xsd:string" use="required" />
                 <xsd:attribute name="cron" type="xsd:string" use="required" />
@@ -57,12 +55,12 @@
                 <xsd:attribute name="failover" type="xsd:string" default="false"/>
                 <xsd:attribute name="reconcile-interval-minutes" type="xsd:string" default="10"/>
                 <xsd:attribute name="misfire" type="xsd:string" default="true"/>
-                <xsd:attribute name="job-sharding-strategy-class" type="xsd:string" />
+                <xsd:attribute name="job-sharding-strategy-type" type="xsd:string" />
+                <xsd:attribute name="job-executor-service-handler" type="xsd:string" />
+                <xsd:attribute name="job-error-handler" type="xsd:string" />
                 <xsd:attribute name="description" type="xsd:string" />
                 <xsd:attribute name="disabled" type="xsd:string" default="false"/>
                 <xsd:attribute name="overwrite" type="xsd:string" default="false"/>
-                <xsd:attribute name="executor-service-handler" type="xsd:string" default="io.elasticjob.lite.executor.handler.impl.DefaultExecutorServiceHandler"/>
-                <xsd:attribute name="job-exception-handler" type="xsd:string" default="io.elasticjob.lite.executor.handler.impl.DefaultJobExceptionHandler"/>
                 <xsd:attribute name="event-trace-rdb-data-source" type="xsd:string" />
             </xsd:extension>
         </xsd:complexContent>

@@ -36,12 +36,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="job-class" class="col-sm-2 control-label" data-lang="job-class"></label>
-                    <div class="col-sm-9">
-                        <input type="text" id="job-class" name="jobClass" class="form-control" disabled />
-                    </div>
-                </div>
                 <div class="row">
                     <div class="col-sm-4">
                         <div class="form-group">
@@ -139,21 +133,21 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="job-sharding-strategy-class" class="col-sm-2 control-label" data-lang="job-sharding-strategy-class"></label>
+                    <label for="job-sharding-strategy-type" class="col-sm-2 control-label" data-lang="job-sharding-strategy-type"></label>
                     <div class="col-sm-9">
-                        <input type="text" id="job-sharding-strategy-class" name="jobShardingStrategyClass" class="form-control" data-toggle="tooltip" data-placement="bottom" title="默认使用按照IP地址顺序分片策略，可参照文档定制化分片策略" />
+                        <input type="text" id="job-sharding-strategy-type" name="jobShardingStrategyType" class="form-control" data-toggle="tooltip" data-placement="bottom" title="默认使用按照IP地址顺序分片策略，可参照文档定制化分片策略" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="job-exception-handler" class="col-sm-2 control-label" data-lang="job-exception-handler"></label>
+                    <label for="job-error-handler" class="col-sm-2 control-label" data-lang="job-error-handler"></label>
                     <div class="col-sm-9">
-                        <input type="text" id="job-exception-handler" name="jobExceptionHandler" class="form-control" data-toggle="tooltip" data-placement="bottom" title="扩展`JobExceptionHandler`接口，定制异常处理流程，默认实现是记录日志但不抛出异常。" />
+                        <input type="text" id="job-error-handler" name="jobErrorHandler" class="form-control" data-toggle="tooltip" data-placement="bottom" title="扩展`JobErrorHandler`接口，定制异常处理流程，默认实现是记录日志但不抛出异常。" />
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="executor-service-handler" class="col-sm-2 control-label" data-lang="job-executor-service-handler"></label>
+                    <label for="job-executor-service-handler" class="col-sm-2 control-label" data-lang="job-executor-service-handler"></label>
                     <div class="col-sm-9">
-                        <input type="text" id="executor-service-handler" name="executorServiceHandler" class="form-control" data-toggle="tooltip" data-placement="bottom" title="扩展`ExecutorServiceHandler`接口，定制线程池。" />
+                        <input type="text" id="job-executor-service-handler" name="jobExecutorServiceHandler" class="form-control" data-toggle="tooltip" data-placement="bottom" title="扩展`ExecutorServiceHandler`接口，定制线程池。" />
                     </div>
                 </div>
                 <div class="form-group">
